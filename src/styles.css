@@ -1,4 +1,3 @@
-/* ===== ОБЩИЕ СТИЛИ ===== */
 body {
   font-family: Arial, sans-serif;
   background: #181818;
@@ -8,14 +7,12 @@ body {
   text-align: center;
 }
 
-/* Контейнер страницы */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .header {
   display: flex;
   justify-content: center;
@@ -24,7 +21,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Поля ввода */
 .input-container {
   display: flex;
   flex-direction: column;
@@ -44,7 +40,6 @@ body {
   text-align: center;
 }
 
-/* Кнопка "Избранное" */
 .favorites-button {
   padding: 10px 15px;
   background: #ffcc00;
@@ -60,7 +55,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== СПИСОК ФИЛЬМОВ ===== */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -69,7 +63,6 @@ body {
   padding: 0;
 }
 
-/* Карточка фильма */
 .movie-card {
   background: #222;
   padding: 15px;
@@ -83,27 +76,21 @@ body {
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Ссылка внутри карточки */
 .movie-card a {
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
-/* Убираем изменение цвета посещенной ссылки */
 .movie-card a:visited {
   color: white;
 }
 
-/* Изображение фильма */
 .movie-card img {
   max-width: 100%;
   border-radius: 10px;
 }
 
-/* ===== КНОПКИ ===== */
-
-/* Кнопка "Назад" */
 .back-button {
   margin-bottom: 15px;
   padding: 10px;
@@ -119,7 +106,6 @@ body {
   background: #666;
 }
 
-/* Кнопка "Добавить / Удалить из избранного" */
 .favorite-button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -136,7 +122,6 @@ body {
   background: #ffaa00;
 }
 
-/* Кнопка "Добавлено в избранное" (активное состояние) */
 .favorite-button--active {
   background: #ff4444 !important;
   color: white !important;
@@ -146,7 +131,6 @@ body {
   background: #cc0000 !important;
 }
 
-/* Кнопка "Удалить из избранного" */
 .remove-button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -163,7 +147,6 @@ body {
   background: #cc0000;
 }
 
-/* ===== ДЕТАЛИ ФИЛЬМА ===== */
 .movie-detail {
   max-width: 800px;
   margin: auto;
@@ -175,7 +158,6 @@ body {
   border-radius: 10px;
 }
 
-/* Описание фильма */
 .movie-detail p {
   font-size: 16px;
   color: #ddd;
@@ -183,7 +165,6 @@ body {
   margin-top: 15px;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 600px) {
   .movies-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
