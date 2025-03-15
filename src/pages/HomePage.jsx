@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MovieCard from "../components/MovieCard";
+import BookCard from "../components/BookCard";
 import "../styles.css";
 
 const HomePage = () => {
-  const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("Breaking Bad");
+  const [books, setBooks] = useState([]);
+  const [search, setSearch] = useState("Harry Potter");
   const [year, setYear] = useState("");
 
   useEffect(() => {
-    fetch(`https://api.tvmaze.com/search/shows?q=${search}`)
+    fetch(`https://openlibrary.org/search.json?title=${search}`)
       .then((response) => response.json())
-      .then((data) => setMovies(data.map((item) => item.show)))
+      .then((data) => setBooks(data.docs))
       .catch((error) => console.error("Ошибка загрузки:", error));
   }, [search]);
 
-  const filteredMovies = movies.filter((movie) => {
+  const filteredBooks = books.filter((book) => {
     if (!year) return true;
-    return movie.premiered?.startsWith(year);
+    return book.first_publish_year?.toString().startsWith(year);
   });
 
   return (
     <div className="container">
       <div className="header">
-        <h1>Поиск фильмов</h1>
+        <h1>Поиск книг</h1>
         <Link to="/favorites" className="favorites-button">Избранное</Link>
       </div>
 
@@ -42,11 +42,11 @@ const HomePage = () => {
         />
       </div>
 
-      <div className="movies-grid">
-        {filteredMovies.length > 0 ? (
-          filteredMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
+      <div className="books-grid">
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => <BookCard key={book.key} book={book} />)
         ) : (
-          <p className="no-movies">Фильмы не найдены</p>
+          <p className="no-books">Книги не найдены</p>
         )}
       </div>
     </div>

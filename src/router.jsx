@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import MoviePage from "./pages/MoviePage";
+import BookPage from "./pages/BookPage";
 import FavoritesPage from "./pages/FavoritesPage"; 
 
 const AppRouter = () => {
@@ -8,7 +8,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/book/:id" element={<BookPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </Router>
@@ -16,3 +16,4 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+
